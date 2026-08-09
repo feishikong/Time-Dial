@@ -173,6 +173,20 @@ function draw_month_name(cr, x, y, font, size, colour, language)
       "novembre",
       "décembre",
     },
+    russian = {
+      "Январь",
+      "Февраль",
+      "Март",
+      "Апрель",
+      "Май",
+      "Июнь",
+      "Июль",
+      "Август",
+      "Сентябрь",
+      "Октябрь",
+      "Ноябрь",
+      "Декабрь",
+    },
   }
   local months = translations[language] or translations.english
   local now = os.date("*t")
@@ -197,6 +211,14 @@ function draw_weekdays(cr, x, y, font, size, spacing, colour, week_starts, langu
     dutch = {
       monday = { "ma", "di", "wo", "do", "vr", "za", "zo" },
       sunday = { "zo", "ma", "di", "wo", "do", "vr", "za" },
+    },
+    spanish = {
+      monday = { "Lu", "Ma", "Mi", "Ju", "Vi", "Sá", "Do" },
+      sunday = { "Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sá" },
+    },
+    russian = {
+      monday = { "Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс" },
+      sunday = { "Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб" },
     },
     -- voeg eventueel meer talen toe
   }
