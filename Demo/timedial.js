@@ -16,13 +16,13 @@ const settings = {
     day_hour_hand: { hex: colors.ubuntu_orange, alpha: 0.7 },
     day_mark: { hex: colors.ubuntu_orange, alpha: 0.7 },
     day_modulo_1: { hex: colors.ubuntu_orange, alpha: 0.7 },
-    day_module_234: { hex: colors.forest_green, alpha: 0.1 },
+    day_modulo_234: { hex: colors.forest_green, alpha: 0.1 },
     minute_sector: { hex: colors.forest_green, alpha: 0.1 },
     minute_sector_edge: { hex: colors.forest_green, alpha: 1.0 },
     hour_mark: { hex: colors.unity_purple, alpha: 0.7 },
     year_background: { hex: colors.silver, alpha: 0.5 },
     night_hour_hand: { hex: colors.unity_purple, alpha: 0.5 },
-    day_module_560: { hex: colors.unity_purple, alpha: 0.5 },
+    day_modulo_560: { hex: colors.unity_purple, alpha: 0.5 },
 };
 
 function hexToRgba(hex, alpha) {
@@ -174,11 +174,11 @@ function drawClock() {
 
         ctx.beginPath();
         if (i % 7 === 1) {
-            ctx.fillStyle = hexToRgba(settings.day_module_1.hex, settings.day_mark.alpha);
+            ctx.fillStyle = hexToRgba(settings.day_modulo_1.hex, settings.day_mark.alpha);
         } else if (i % 7 === 2 || i % 7 === 3 || i % 7 === 4) {
-            ctx.fillStyle = hexToRgba(settings.day_module_234.hex, settings.day_mark.alpha);
+            ctx.fillStyle = hexToRgba(settings.day_modulo_234.hex, settings.day_mark.alpha);
         } else {
-            ctx.fillStyle = hexToRgba(settings.day_module_560.hex, settings.day_mark.alpha);
+            ctx.fillStyle = hexToRgba(settings.day_modulo_560.hex, settings.day_mark.alpha);
         }
         ctx.arc(x, y, dot_radius, 0, 2 * Math.PI);
         ctx.fill();
