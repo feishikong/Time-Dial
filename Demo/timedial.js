@@ -164,7 +164,7 @@ function drawClock() {
         ctx.beginPath();
         if (i % 7 === 1) {
             ctx.fillStyle = hexToRgba(settings.ubuntu_orange.hex, settings.ubuntu_orange.alpha);
-        } else if (i % 7 === 0 || i % 7 === 3 || i % 7 === 5) {
+        } else if (i % 7 === 2 || i % 7 === 3 || i % 7 === 4) {
             ctx.fillStyle = hexToRgba(settings.forest_green.hex, settings.ubuntu_orange.alpha);
         } else {
             ctx.fillStyle = hexToRgba(settings.unity_purple.hex, settings.ubuntu_orange.alpha);

@@ -189,7 +189,7 @@ function conky_analog_clock()
 
 	      if i % 7 == 1 then
 		      r, g, b, a = hex_to_rgba(settings.day_modulo_1.hex, settings.day_mark.alpha)
-	      elseif i % 7 == 0 or i % 7 == 3 or i % 7 == 5 then
+	      elseif i % 7 == 2 or i % 7 == 3 or i % 7 == 4 then
 		      r, g, b, a = hex_to_rgba(settings.day_modulo_0357.hex, settings.day_mark.alpha)
 	      else
 		      r, g, b, a = hex_to_rgba(settings.day_modulo_246.hex, settings.day_mark.alpha)
