@@ -56,4 +56,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Author
 
-Work derived from Analog Clock & Calendar Cinky created by [Wim66](https://github.com/wim66).
+Work derived from [Analog Clock & Calendar Conky created by Wim66](https://github.com/wim66/Analog-Clock-Calendar).
