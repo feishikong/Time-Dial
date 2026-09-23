@@ -1,0 +1,111 @@
+    body {
+      background: #121221;
+      color: #f3f3f3;
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    .gradient-border {
+      background: linear-gradient(to bottom, #003e00, #03f404, #003e00);
+      border-radius: 18px;
+      padding: 8px;
+      max-width: 900px;
+      margin: 40px auto;
+      box-shadow: 0 4px 24px #000a;
+      animation: fadeIn 1.3s;
+    }
+    .container {
+      background: #19192b;
+      border-radius: 14px;
+      padding: 32px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px);}
+      to   { opacity: 1; transform: translateY(0);}
+    }
+    .avatar {
+      display: block;
+      margin: 0 auto 24px auto;
+      border-radius: 50%;
+      box-shadow: 0 2px 12px #0006;
+      transition: box-shadow 0.3s;
+    }
+    .avatar:hover {
+      box-shadow: 0 0 32px #03f404, 0 0 0 6px #222;
+    }
+    h1, h2, h3 {
+      color: #c5cff5;
+      letter-spacing: 1.2px;
+    }
+    a {
+      color: #88b3fa;
+      transition: color 0.2s;
+    }
+    a:hover {
+      color: #1965f5;
+      text-decoration: underline wavy;
+    }
+    pre, code {
+      background: #2c2c3b;
+      color: #e8e8e8;
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-family: 'Fira Mono', monospace;
+    }
+    pre {
+      padding: 12px;
+      overflow-x: auto;
+    }
+    table {
+      border-collapse: collapse;
+      background: #242424;
+      margin-bottom: 1em;
+    }
+    th, td {
+      border: 1px solid #444;
+      padding: 8px 12px;
+    }
+    th {
+      background: #333;
+    }
+    hr {
+      border: 1px solid #444;
+    }
+    @media (max-width: 600px) {
+      .container { padding: 8px; }
+      .avatar { width: 90px; }
+    }
+#readme-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 24px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 16px #0006;
+  transition: box-shadow 0.3s;
+}
+#readme-content img:hover {
+  box-shadow: 0 0 32px #03f404;
+}
+::selection {
+  background: #03f404;
+  color: #19192b;
+}
+.github-btn {
+  display: inline-block;
+  background: #03f404;
+  color: #19192b;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.github-btn:hover {
+  background: #00a300;
+  color: #fff;
+}
+html {
+  scroll-behavior: smooth;
+}

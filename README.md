@@ -1,19 +1,20 @@
-# Analog Clock & Calendar Conky
+# Time Dial
 
-This repository contains three Conky configurations to display an analog clock and customizable calendar widget on your desktop.
+This repository contains the Conky configuration to display a "Time Dial" widget on your desktop.
 
-![Calendar-Conky](preview.png)![Calendar-Conky](Design-1/preview.png)
+The Time Dial is an abstract way to represent date and time inspired by Analog Clocks and Ubuntu Touch's Stat Circle.
+
+![Time-Dial](preview.png)
 
 ## Features
 
-- Displays an analog clock and monthly calendar with:
-  - Highlighted "Today" date
-  - Week numbers (optional)
-  - Color-coded weekdays, weekend days, and days outside the current month
-- Fully customizable:
-  - Fonts and sizes
-  - Colors for each element
-  - Spacing and positioning
+- Displays the current year as an abstract binary pattern:
+- Highlights the hour marks to represent the current month
+- Displays the current date as the number of dots around the dial
+- Uses a clock hand to indicate the current hour
+  - clock hand changes color based on AM/PM
+- Displays the current minute as a pie chart that progresses as the minutes pass
+- Colors for each element fully customizable:
 - Lightweight and efficient, built using Lua and Cairo.
 
 ## Getting Started
@@ -32,70 +33,16 @@ Additionally, ensure Lua and Cairo libraries are available on your system.
 
 - Clone this repository:
   ```bash
-  git clone https://github.com/wim66/Analog-Clock-Calendar.git
-  cd Calendar-Conky
+  git clone https://github.com/feishikong/Time-Dial.git
+  cd Time-Dial
+  ./start.sh
   ```
 
 ### Customization
 
 #### Calendar Appearance
 
-The calendar appearance can be customized by editing the `calendar.lua` script. Key settings include:
-
-- **Font and Size**:
-
-  ```lua
-  local font_name = "Ubuntu Mono"
-  local font_size = 16
-  ```
-
-- **Positioning**:
-
-  ```lua
-  local start_x = 40
-  local start_y = 40
-  ```
-
-- **Colors**:
-  ```lua
-  local colour_month = "#44AAFF"     -- Month name
-  local colour_weekdays = "#CCCCCC" -- Weekday headers
-  local colour_days = "#FFFFFF"     -- Normal days
-  local colour_today = "#00FF00"    -- Today's date
-  local colour_outside = "#555555"  -- Days outside the current month
-  local colour_weeknums = "#44AAFF" -- Week numbers
-  ```
-- **Language**: You can add more languages in the translations section as needed
-
-  ```lua
-  local week_starts = "monday" -- monday or sunday
-  local language = "english" -- english, dutch, german, spanish, french
-  ```
-
-- **Spacing**:
-  ```lua
-  local day_spacing = 22
-  ```
-
-For a detailed explanation of each setting, refer to the comments in the `calendar.lua` script.
-
----
-
-### How to change colors for Design-2 widgets
-
-To change the box and border colors in Design-2:
-
-1. **Start** Color_Chooser.desktop.
-
-2. **Available color schemes** can be found in `Design-2/scripts/colour_schemes.lua`. Some predefined options include:
-   - `gray`
-   - `blue`
-   - `red`
-   - `orange`
-   - `green`
-   - `purple`
-   - `slot (slot theme color)`
-   - You can also add your own color scheme to `colour_schemes.lua` and use it in `layout.lua`.
+The appearance can be customized by editing the `clock.lua` script. Search for the "settings" array.
 
 ---
 
@@ -109,4 +56,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Author
 
-Created by [Wim66](https://github.com/wim66).
+Work derived from Analog Clock & Calendar Cinky created by [Wim66](https://github.com/wim66).
