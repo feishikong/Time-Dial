@@ -127,8 +127,22 @@ function drawClock() {
     // -------------------------------------------------------------
     const hour_length = radius * 0.4;
     const hour_width = h * 0.03;
+    const glow_length = radius * 0.42;
+    const glow_width = h * 0.04;
     ctx.beginPath();
-    ctx.strokeStyle = hexToRgba(settings.ubuntu_orange.hex, settings.ubuntu_orange.alpha);
+    if(hours_24 < 12)
+        ctx.strokeStyle = hexToRgba(settings.unity_purple.hex, settings.ubuntu_orange.alpha);
+    else
+        ctx.strokeStyle = hexToRgba(settings.ubuntu_orange.hex, settings.ubuntu_orange.alpha);
+    ctx.lineWidth = glow_width;
+    ctx.moveTo(xc, yc);
+    ctx.lineTo(xc + glow_length * Math.sin(hours_angle), yc - glow_length * Math.cos(hours_angle));
+    ctx.stroke();
+    ctx.beginPath();
+    if(hours_24 < 12)
+        ctx.strokeStyle = hexToRgba(settings.ubuntu_orange.hex, settings.ubuntu_orange.alpha);
+    else
+        ctx.strokeStyle = hexToRgba(settings.unity_purple.hex, settings.ubuntu_orange.alpha);
     ctx.lineWidth = hour_width;
     ctx.moveTo(xc, yc);
     ctx.lineTo(xc + hour_length * Math.sin(hours_angle), yc - hour_length * Math.cos(hours_angle));
