@@ -41,18 +41,17 @@ local colors = {
     silver = "#A7A8A9",
 }
 local settings = {
-    month_mark = {hex = colors.ubuntu_orange, alpha = 0.7},    -- Month marks
-    day_hour_hand = {hex = colors.ubuntu_orange, alpha = 1},    -- Day Hour hand
-    night_hour_hand = {hex = colors.unity_purple, alpha = 1},    -- Night Hour hand
-    day_mark = {hex = colors.ubuntu_orange, alpha = 0.7},    -- Day marks
-    day_modulo_1 = {hex = colors.ubuntu_orange, alpha = 0.7},    -- Hour marks (Ubuntu Orange)
-    day_modulo_0357 = {hex = colors.forest_green, alpha = 0.1},      -- Hour hand (Forest green)
-    day_modulo_246 = {hex = colors.unity_purple, alpha = 0.5},
-    minute_sector = {hex = colors.forest_green, alpha = 0.1},      -- Hour hand (Forest green)
-    minute_sector_edge = {hex = colors.forest_green, alpha = 1},      -- Hour hand (Forest green)
-    hour_mark = {hex = colors.unity_purple, alpha = 0.7},
-    year_background = {hex = colors.silver, alpha = 0.5},
-    unity_purple = {hex = colors.unity_purple, alpha = 0.5},
+    month_mark = {hex = colors.ubuntu_orange, alpha = 0.7},   -- Month marks
+    day_hour_hand = {hex = colors.ubuntu_orange, alpha = 1},   -- Day Hour hand
+    day_mark = {hex = colors.ubuntu_orange, alpha = 0.7},   -- Day marks
+    day_modulo_1 = {hex = colors.ubuntu_orange, alpha = 0.7},   -- Day marks modulo 1
+    day_modulo_234 = {hex = colors.forest_green, alpha = 0.1},   -- Day marks modulo 2, 3 and 4
+    minute_sector = {hex = colors.forest_green, alpha = 0.1},   -- Minute sector
+    minute_sector_edge = {hex = colors.forest_green, alpha = 1},  -- Minute Sector Edge
+    hour_mark = {hex = colors.unity_purple, alpha = 0.7},   -- Hour marks
+    year_background = {hex = colors.silver, alpha = 0.5},   -- Year background
+    night_hour_hand = {hex = colors.unity_purple, alpha = 1},   -- Night Hour hand
+    day_modulo_560 = {hex = colors.unity_purple, alpha = 0.5},   -- Day marks modulo 5, 6 and 0
 }
 
 function conky_analog_clock()
@@ -190,9 +189,9 @@ function conky_analog_clock()
 	      if i % 7 == 1 then
 		      r, g, b, a = hex_to_rgba(settings.day_modulo_1.hex, settings.day_mark.alpha)
 	      elseif i % 7 == 2 or i % 7 == 3 or i % 7 == 4 then
-		      r, g, b, a = hex_to_rgba(settings.day_modulo_0357.hex, settings.day_mark.alpha)
+		      r, g, b, a = hex_to_rgba(settings.day_modulo_234.hex, settings.day_mark.alpha)
 	      else
-		      r, g, b, a = hex_to_rgba(settings.day_modulo_246.hex, settings.day_mark.alpha)
+		      r, g, b, a = hex_to_rgba(settings.day_modulo_560.hex, settings.day_mark.alpha)
 	      end
 	      cairo_set_source_rgba(cr, r, g, b , a)
 	      cairo_arc(cr, x, y, dot_radius, 0, 2 * math.pi)
