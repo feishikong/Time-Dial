@@ -2,16 +2,27 @@ const canvas = document.getElementById('analogClock');
 const ctx = canvas.getContext('2d');
 
 // Color settings (hexadecimal & alpha matching original Lua config)
+const colors = {
+    ubuntu_orange:  "#E95420",
+    lilac:  "#c8a2c8",
+    forest_green:  "#008822",
+    bubblegum:  "#ffc1cc",
+    silver:  "#A7A8A9",
+    unity_purple:  "#762572",
+};
+
 const settings = {
-    ubuntu_orange: { hex: "#E95420", alpha: 0.7 },
-    lilac: { hex: "#c8a2c8", alpha: 0.7 },
-    forest_green: { hex: "#008822", alpha: 0.1 },
-    forest_green_edge: { hex: "#008822", alpha: 1.0 },
-    bubblegum: { hex: "#ffc1cc", alpha: 0.1 },
-    bubblegum_edge: { hex: "#ffc1cc", alpha: 1.0 },
-    silver: { hex: "#A7A8A9", alpha: 0.1 },
-    silver_edge: { hex: "#A7A8A9", alpha: 1.0 },
-    unity_purple: { hex: "#762572", alpha: 0.5 },
+    month_mark: { hex: colors.ubuntu_orange, alpha: 0.7 },
+    day_hour_hand: { hex: colors.ubuntu_orange, alpha: 0.7 },
+    day_mark: { hex: colors.ubuntu_orange, alpha: 0.7 },
+    day_modulo_1: { hex: colors.ubuntu_orange, alpha: 0.7 },
+    day_module_234: { hex: colors.forest_green, alpha: 0.1 },
+    minute_sector: { hex: colors.forest_green, alpha: 0.1 },
+    minute_sector_edge: { hex: colors.forest_green, alpha: 1.0 },
+    hour_mark: { hex: colors.unity_purple, alpha: 0.7 },
+    year_background: { hex: colors.silver, alpha: 0.5 },
+    night_hour_hand: { hex: colors.unity_purple, alpha: 0.5 },
+    day_module_560: { hex: colors.unity_purple, alpha: 0.5 },
 };
 
 function hexToRgba(hex, alpha) {
@@ -70,8 +81,8 @@ function drawClock() {
         const next_yeary = yc + year_length * Math.sin(next_start);
         ctx.arc(next_yearx, next_yeary, year_length, next_start, next_start + Math.PI, true);
 
-        ctx.fillStyle = hexToRgba(settings.silver.hex, settings.unity_purple.alpha);
-        ctx.strokeStyle = hexToRgba(settings.silver.hex, settings.unity_purple.alpha);
+        ctx.fillStyle = hexToRgba(settings.year_background.hex, settings.year_background.alpha);
+        ctx.strokeStyle = hexToRgba(settings.year_background.hex, settings.year_background.alpha);
         ctx.lineWidth = 1;
 
         if (Math.floor(year / Math.pow(2, i)) % 2 === 1) {
@@ -88,8 +99,8 @@ function drawClock() {
     const end_angle = start_angle + minutes_angle;
 
     const glass_gradient = ctx.createRadialGradient(xc, yc, 0, xc, yc, minute_length);
-    glass_gradient.addColorStop(0, hexToRgba(settings.forest_green.hex, settings.forest_green.alpha));
-    glass_gradient.addColorStop(1, hexToRgba(settings.forest_green_edge.hex, settings.forest_green_edge.alpha));
+    glass_gradient.addColorStop(0, hexToRgba(settings.minute_sector.hex, settings.minute_sector.alpha));
+    glass_gradient.addColorStop(1, hexToRgba(settings.minute_sector_edge.hex, settings.minute_sector_edge.alpha));
 
     ctx.beginPath();
     ctx.moveTo(xc, yc);
@@ -111,9 +122,9 @@ function drawClock() {
         if (i % 5 === 0) {
             ctx.beginPath();
             if (i <= month_mark) {
-                ctx.strokeStyle = hexToRgba(settings.ubuntu_orange.hex, settings.ubuntu_orange.alpha);
+                ctx.strokeStyle = hexToRgba(settings.month_mark.hex, settings.hour_mark.alpha);
             } else {
-                ctx.strokeStyle = hexToRgba(settings.unity_purple.hex, settings.ubuntu_orange.alpha);
+                ctx.strokeStyle = hexToRgba(settings.hour_mark.hex, settings.hour_mark.alpha);
             }
             ctx.lineWidth = mark_width;
             ctx.moveTo(xc + inner_radius * Math.sin(angle), yc - inner_radius * Math.cos(angle));
@@ -131,18 +142,18 @@ function drawClock() {
     const glow_width = h * 0.04;
     ctx.beginPath();
     if(hours_24 < 12)
-        ctx.strokeStyle = hexToRgba(settings.unity_purple.hex, settings.ubuntu_orange.alpha);
+        ctx.strokeStyle = hexToRgba(settings.night_hour_hand.hex, settings.hour_mark.alpha);
     else
-        ctx.strokeStyle = hexToRgba(settings.ubuntu_orange.hex, settings.ubuntu_orange.alpha);
+        ctx.strokeStyle = hexToRgba(settings.day_hour_hand.hex, settings.hour_mark.alpha);
     ctx.lineWidth = glow_width;
     ctx.moveTo(xc, yc);
     ctx.lineTo(xc + glow_length * Math.sin(hours_angle), yc - glow_length * Math.cos(hours_angle));
     ctx.stroke();
     ctx.beginPath();
     if(hours_24 < 12)
-        ctx.strokeStyle = hexToRgba(settings.ubuntu_orange.hex, settings.ubuntu_orange.alpha);
+        ctx.strokeStyle = hexToRgba(settings.day_hour_hand.hex, settings.day_hour_hand.alpha);
     else
-        ctx.strokeStyle = hexToRgba(settings.unity_purple.hex, settings.ubuntu_orange.alpha);
+        ctx.strokeStyle = hexToRgba(settings.night_hour_hand.hex, settings.night_hour_hand.alpha);
     ctx.lineWidth = hour_width;
     ctx.moveTo(xc, yc);
     ctx.lineTo(xc + hour_length * Math.sin(hours_angle), yc - hour_length * Math.cos(hours_angle));
@@ -163,11 +174,11 @@ function drawClock() {
 
         ctx.beginPath();
         if (i % 7 === 1) {
-            ctx.fillStyle = hexToRgba(settings.ubuntu_orange.hex, settings.ubuntu_orange.alpha);
+            ctx.fillStyle = hexToRgba(settings.day_module_1.hex, settings.day_mark.alpha);
         } else if (i % 7 === 2 || i % 7 === 3 || i % 7 === 4) {
-            ctx.fillStyle = hexToRgba(settings.forest_green.hex, settings.ubuntu_orange.alpha);
+            ctx.fillStyle = hexToRgba(settings.day_module_234.hex, settings.day_mark.alpha);
         } else {
-            ctx.fillStyle = hexToRgba(settings.unity_purple.hex, settings.ubuntu_orange.alpha);
+            ctx.fillStyle = hexToRgba(settings.day_module_560.hex, settings.day_mark.alpha);
         }
         ctx.arc(x, y, dot_radius, 0, 2 * Math.PI);
         ctx.fill();
