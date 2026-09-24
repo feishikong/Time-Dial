@@ -130,15 +130,13 @@ function conky_analog_clock()
           local angle = (i / 60) * 2 * math.pi
           if i % 5 == 0 then
               -- Hour mark (every 5 minutes, so 12 hours)
-              local hour = math.floor(i / 5) -- No decimals
-
               -- Month marks
-	          if i <= month_mark then
-		          r, g, b, a = hex_to_rgba(settings.month_mark.hex, settings.hour_mark.alpha)
-	          -- Hour marks
-	          else
-		          r, g, b, a = hex_to_rgba(settings.hour_mark.hex, settings.hour_mark.alpha)
-	          end
+	      if i <= month_mark then
+		      r, g, b, a = hex_to_rgba(settings.month_mark.hex, settings.hour_mark.alpha)
+	      -- Hour marks
+	      else
+	              r, g, b, a = hex_to_rgba(settings.hour_mark.hex, settings.hour_mark.alpha)
+	      end
               cairo_set_source_rgba(cr, r, g, b, a)
               cairo_set_line_width(cr, mark_width)
               cairo_move_to(cr, xc + inner_radius * math.sin(angle), yc - inner_radius * math.cos(angle))
