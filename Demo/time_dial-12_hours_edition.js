@@ -9,19 +9,23 @@ const colors = {
     bubblegum:  "#ffc1cc",
     silver:  "#A7A8A9",
     unity_purple:  "#762572",
+    fedora_blue: "#3C6EB4",
+    red_hat: "#EE0000",
+    coal_black: "#0C0908",
+    pikachu_yellow: "F6CF57",
 };
 
 const settings = {
     month_mark: { hex: colors.ubuntu_orange, alpha: 0.7 },
-    day_hour_hand: { hex: colors.ubuntu_orange, alpha: 0.7 },
+    day_hour_hand: { hex: colors.fedora_blue, alpha: 0.7 },
     day_mark: { hex: colors.ubuntu_orange, alpha: 0.7 },
-    day_modulo_1: { hex: colors.ubuntu_orange, alpha: 0.7 },
-    day_modulo_234: { hex: colors.forest_green, alpha: 0.1 },
+    day_modulo_1: { hex: colors.red_hat, alpha: 0.7 },
+    day_modulo_234: { hex: colors.bubblegum, alpha: 0.1 },
     minute_sector: { hex: colors.forest_green, alpha: 0.1 },
     minute_sector_edge: { hex: colors.forest_green, alpha: 1.0 },
-    hour_mark: { hex: colors.unity_purple, alpha: 0.7 },
+    hour_mark: { hex: colors.pikachu_yellow, alpha: 0.7 },
     year_background: { hex: colors.silver, alpha: 0.5 },
-    night_hour_hand: { hex: colors.unity_purple, alpha: 0.5 },
+    night_hour_hand: { hex: colors.coal_black, alpha: 0.5 },
     day_modulo_560: { hex: colors.unity_purple, alpha: 0.5 },
 };
 
@@ -137,9 +141,9 @@ function drawClock() {
     // 4. Hour Hand
     // -------------------------------------------------------------
     const hour_length = radius * 0.4;
-    const hour_width = h * 0.03;
+    const hour_width = h * 0.01;
     const glow_length = radius * 0.42;
-    const glow_width = h * 0.04;
+    const glow_width = h * 0.02;
     ctx.beginPath();
     if(hours_24 < 12)
         ctx.strokeStyle = hexToRgba(settings.night_hour_hand.hex, settings.hour_mark.alpha);
