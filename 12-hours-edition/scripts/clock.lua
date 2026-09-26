@@ -152,8 +152,8 @@ function conky_analog_clock()
 
     -- Hour hand
     local hour_length = radius * 0.4
-    local hour_width = h * 0.03
-    local glow_width = h * 0.04
+    local hour_width = h * 0.01
+    local glow_width = h * 0.02
     local glow_length = radius * 0.42
     if (tonumber(hours_24) < 12) then
 	    r, g, b, a = hex_to_rgba(settings.night_hour_hand.hex, settings.hour_mark.alpha)
