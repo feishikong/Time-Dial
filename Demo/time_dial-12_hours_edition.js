@@ -57,6 +57,7 @@ function drawClock() {
     const date = now.getDate();
 
     // Calculate angles
+    const seconds_angle = (secs / 60) * 2 * Math.PI;
     const minutes_angle = ((mins + secs / 60) / 60) * 2 * Math.PI;
     const hours_angle = (((hours_24 % 12) + mins / 60) / 12) * 2 * Math.PI;
 
@@ -67,7 +68,7 @@ function drawClock() {
     const petal_angle_step = Math.PI / 6;
 
     for (let i = 0; i < 12; i++) {
-        const petal_angle = i * petal_angle_step - (Math.PI / 2) + petal_angle_step;
+        const petal_angle = i * petal_angle_step - (Math.PI / 2) + petal_angle_step + seconds_angle;
         const petal_start_angle = petal_angle + Math.PI;
         const yearx = xc + year_length * Math.cos(petal_angle);
         const yeary = yc + year_length * Math.sin(petal_angle);
