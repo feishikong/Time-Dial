@@ -4,7 +4,7 @@ This repository contains the Conky configuration to display a "Time Dial" widget
 
 The Time Dial is an abstract way to represent date and time inspired by Analog Clocks and Ubuntu Touch's Stat Circle.
 
-![Time-Dial](preview.png)
+![Time-Dial](12-hours-edition/preview.png)
 
 ## Features
 
