@@ -12,7 +12,7 @@ const colors = {
     fedora_blue: "#3C6EB4",
     red_hat: "#EE0000",
     coal_black: "#0C0908",
-    pikachu_yellow: "F6CF57",
+    pikachu_yellow: "#F6CF57",
 };
 
 const settings = {
