@@ -39,18 +39,23 @@ local colors = {
     unity_purple = "#762572",
     forest_green = "#008822",
     silver = "#A7A8A9",
+    bubblegum = "#FFC1CC",
+    fedora_blue = "#3C6EB4",
+    red_hat = "#EE0000",
+    coal_black = "#0C0908",
+    pikachu_yellow = "F6CF57",
 }
 local settings = {
     month_mark = {hex = colors.ubuntu_orange, alpha = 0.7},   -- Month marks
-    day_hour_hand = {hex = colors.ubuntu_orange, alpha = 1},   -- Day Hour hand
-    day_mark = {hex = colors.ubuntu_orange, alpha = 0.7},   -- Day marks
-    day_modulo_1 = {hex = colors.ubuntu_orange, alpha = 0.7},   -- Day marks modulo 1
-    day_modulo_234 = {hex = colors.forest_green, alpha = 0.1},   -- Day marks modulo 2, 3 and 4
+    day_hour_hand = {hex = colors.fedora_blue, alpha = 1},   -- Day Hour hand
+    day_mark = {hex = colors.ured_hat, alpha = 0.7},   -- Day marks
+    day_modulo_1 = {hex = colors.red_hat, alpha = 0.7},   -- Day marks modulo 1
+    day_modulo_234 = {hex = colors.bubblegum, alpha = 0.1},   -- Day marks modulo 2, 3 and 4
     minute_sector = {hex = colors.forest_green, alpha = 0.1},   -- Minute sector
     minute_sector_edge = {hex = colors.forest_green, alpha = 1},  -- Minute Sector Edge
-    hour_mark = {hex = colors.unity_purple, alpha = 0.7},   -- Hour marks
+    hour_mark = {hex = colors.pikachu_yellow, alpha = 0.7},   -- Hour marks
     year_background = {hex = colors.silver, alpha = 0.5},   -- Year background
-    night_hour_hand = {hex = colors.unity_purple, alpha = 1},   -- Night Hour hand
+    night_hour_hand = {hex = colors.coal_black, alpha = 1},   -- Night Hour hand
     day_modulo_560 = {hex = colors.unity_purple, alpha = 0.5},   -- Day marks modulo 5, 6 and 0
 }
 
