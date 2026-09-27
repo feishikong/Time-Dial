@@ -49,6 +49,7 @@ function drawClock() {
     const yc = h / 2;
 
     const now = new Date();
+    const msecs = now.getMilliSeconds();
     const secs = now.getSeconds();
     const mins = now.getMinutes();
     const hours_24 = now.getHours();
@@ -57,7 +58,7 @@ function drawClock() {
     const date = now.getDate();
 
     // Calculate angles
-    const seconds_angle = (secs / 60) * 2 * Math.PI;
+    const seconds_angle = ((secs + msecs / 1000) / 60) * 2 * Math.PI;
     const minutes_angle = ((mins + secs / 60) / 60) * 2 * Math.PI;
     const hours_angle = (((hours_24 % 12) + mins / 60) / 12) * 2 * Math.PI;
 
