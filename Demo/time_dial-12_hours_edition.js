@@ -49,7 +49,7 @@ function drawClock() {
     const yc = h / 2;
 
     const now = new Date();
-    const msecs = now.getMilliSeconds();
+    const msecs = now.getMilliseconds();
     const secs = now.getSeconds();
     const mins = now.getMinutes();
     const hours_24 = now.getHours();
