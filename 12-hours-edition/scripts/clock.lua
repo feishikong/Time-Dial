@@ -81,6 +81,7 @@ function conky_analog_clock()
     local hours_24 = os.date("%H") -- 24-hour format for calculations
 
     -- Calculate angles (in radians)
+    local seconds_angle = (secs / 60) * 2 * math.pi
     local minutes_angle = ((mins + secs / 60) / 60) * 2 * math.pi
     local hours_angle = ((hours_24 % 12 + mins / 60) / 12) * 2 * math.pi
 
@@ -92,7 +93,7 @@ function conky_analog_clock()
        r, g, b, a = hex_to_rgba(settings.year_background.hex, settings.year_background.alpha)
        cairo_set_source_rgba(cr, r, g, b, a)
        local petal_angle_step = math.pi / 6
-       local petal_angle = i * petal_angle_step - (math.pi / 2) + petal_angle_step
+       local petal_angle = i * petal_angle_step - (math.pi / 2) + petal_angle_step + seconds_angle
        local petal_start_angle = petal_angle + math.pi
        local yearx = xc + year_length * math.cos(petal_angle)
        local yeary = yc + year_length * math.sin(petal_angle)
