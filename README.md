@@ -4,6 +4,10 @@ This repository contains the Conky configuration to display a "Time Dial" widget
 
 The Time Dial is an abstract way to represent date and time inspired by Analog Clocks and Ubuntu Touch's Stat Circle.
 
+There are 2 variants:
+- the 12 hour edition, featured below on the left
+- the 24 hour edition, featured below on the right
+
 ## Preview
 
 <div id="preview">
@@ -20,12 +24,14 @@ The Time Dial is an abstract way to represent date and time inspired by Analog C
       
 ## Features
 
-- Displays the current year as an abstract binary pattern:
+- Displays the current year as an abstract binary pattern
+  - the petals encode the year using binary
 - Highlights the hour marks to represent the current month
 - Displays the current date as the number of dots around the dial
-- Uses a clock hand to indicate the current hour
-  - clock hand changes color based on AM/PM
 - Displays the current minute as a pie chart that progresses as the minutes pass
+- the 24 hour edition displays the current hour as the outer ring that progresses as the hours pass.
+- the 12 hour edition uses a clock hand to indicate the current hour.
+  - clock hand changes color based on AM/PM
 - Colors for each element fully customizable:
 - Lightweight and efficient, built using Lua and Cairo.
 
