@@ -7,10 +7,12 @@ The Time Dial is an abstract way to represent date and time inspired by Analog C
 ## Preview
 
 <div id="preview">
-<canvas id="12-hour-time-dial" width="100" height="100" class="avatar"></canvas>
 <img src="12-hours-edition/preview.png" width="400" alt="12 Hour Edition">
 <img src="24-hours-edition/preview.png" width="400" alt="24 Hour Edition">
 </div>
+
+
+<canvas id="24-hour-time-dial" width="100" height="100" class="avatar"></canvas>
 
 ## Features
 
