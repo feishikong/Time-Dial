@@ -52,7 +52,8 @@ Additionally, ensure Lua and Cairo libraries are available on your system.
   ```bash
   git clone https://github.com/feishikong/Time-Dial.git
   cd Time-Dial
-  ./start.sh
+  ./start_12.sh # for the 12 hour edition
+  ./start_24.sh # for the 24 hour edition
   ```
 
 ### Customization
