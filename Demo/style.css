@@ -102,6 +102,9 @@
   text-decoration: none;
   transition: background 0.2s, color 0.2s;
 }
+#preview {
+  display: flex;
+}
 .github-btn:hover {
   background: #00a300;
   color: #fff;

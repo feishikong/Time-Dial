@@ -6,7 +6,10 @@ The Time Dial is an abstract way to represent date and time inspired by Analog C
 
 ## Preview
 
-<img src="12-hours-edition/preview.png" width="400" alt="12 Hour Edition"> <img src="24-hours-edition/preview.png" width="400" alt="24 Hour Edition">
+<div id="preview">
+<img src="12-hours-edition/preview.png" width="400" alt="12 Hour Edition">
+<img src="24-hours-edition/preview.png" width="400" alt="24 Hour Edition">
+</div>
 
 ## Features
 
