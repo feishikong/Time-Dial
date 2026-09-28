@@ -15,7 +15,6 @@
     <div class="container">
       <canvas id="12-hour-time-dial" width="100" height="100" class="avatar"></canvas>
       <script src="Demo/time_dial-12_hours_edition.js"></script>
-      <script src="Demo/time_dial-24_hours_edition.js"></script>
       <div id="readme-content">
         <p>README laden...</p>
       </div>
@@ -37,6 +36,9 @@
         const markdown = atob(data.content.replace(/\n/g, ''));
         const html = marked.parse(markdown, { gfm: true });
         document.getElementById('readme-content').innerHTML = html;
+        const script = document.createElement('script');
+        script.src = 'Demo/time_dial-24_hours_edition.js';
+        document.body.appendChild(script);
       })
       .catch(err => {
         document.getElementById('readme-content').innerHTML = "<p>README kon niet worden geladen.</p>";
