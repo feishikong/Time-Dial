@@ -12,7 +12,7 @@ The Time Dial is an abstract way to represent date and time inspired by Analog C
 </div>
 
 ## Demo
-<canvas id="24-hour-time-dial" width="100" height="100" class="avatar"></canvas>
+<canvas id="12-hour-time-dial" width="100" height="100" class="avatar"></canvas>
 <canvas id="24-hour-time-dial" width="100" height="100" class="avatar"></canvas>
 <a id="github-btn" href="https://feishikong.github.io/time-dial">View Demo</a>
       
