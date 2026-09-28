@@ -10,13 +10,12 @@ There are 2 variants:
 
 ## Preview
 
-<div id="preview">
+<div id="preview" class="preview">
 <img src="12-hours-edition/preview.png" width="40%" alt="12 Hour Edition">
 <img src="24-hours-edition/preview.png" width="40%" alt="24 Hour Edition">
 </div>
 
-## Demo
-<div id="preview">
+<div id="demo" class="preview">
 <canvas id="12-hour-time-dial" width="400" height="400" class="avatar"></canvas>
 <canvas id="24-hour-time-dial" width="400" height="400" class="avatar"></canvas>
 <a id="github-btn" href="https://feishikong.github.io/time-dial">View Demo</a>
