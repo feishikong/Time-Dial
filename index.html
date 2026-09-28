@@ -43,7 +43,7 @@
         const btn = document.querySelector("#github-btn");
         btn.parentNode.removeChild(btn);
         const preview = document.querySelector("#preview");
-        btn.parentNode.removeChild(preview);
+        preview.parentNode.removeChild(preview);
       })
       .catch(err => {
         document.getElementById('readme-content').innerHTML = "<p>README kon niet worden geladen.</p>";
