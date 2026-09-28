@@ -1,5 +1,5 @@
-const canvas = document.getElementById('24-hour-time-dial');
-const ctx = canvas.getContext('2d');
+const canvas24 = document.getElementById('24-hour-time-dial');
+const ctx = canvas24.getContext('2d');
 
 // Color settings (hexadecimal & alpha matching original Lua config)
 const colors = {
@@ -43,8 +43,8 @@ function hexToRgba(hex, alpha) {
 }
 
 function drawClock() {
-    const w = canvas.width;
-    const h = canvas.height;
+    const w = canvas24.width;
+    const h = canvas24.height;
     ctx.clearRect(0, 0, w, h);
 
     // Clock settings
