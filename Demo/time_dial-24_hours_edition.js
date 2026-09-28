@@ -1,5 +1,5 @@
 const canvas24 = document.getElementById('24-hour-time-dial');
-const ctx = canvas24.getContext('2d');
+const ctx24 = canvas24.getContext('2d');
 
 // Color settings (hexadecimal & alpha matching original Lua config)
 const colors = {
@@ -45,7 +45,7 @@ function hexToRgba(hex, alpha) {
 function drawClock() {
     const w = canvas24.width;
     const h = canvas24.height;
-    ctx.clearRect(0, 0, w, h);
+    ctx24.clearRect(0, 0, w, h);
 
     // Clock settings
     const clock_size = h * 0.8;
@@ -79,27 +79,27 @@ function drawClock() {
         const yearx = xc + year_length * Math.cos(petal_angle);
         const yeary = yc + year_length * Math.sin(petal_angle);
 
-        ctx.beginPath();
+        ctx24.beginPath();
         // Arc 1
-        ctx.arc(yearx, yeary, year_length, petal_start_angle, petal_angle, false);
+        ctx24.arc(yearx, yeary, year_length, petal_start_angle, petal_angle, false);
 
         // Arc 2
         const next_start = petal_angle + petal_angle_step;
-        ctx.arc(xc, yc, radius, petal_angle, next_start, false);
+        ctx24.arc(xc, yc, radius, petal_angle, next_start, false);
 
         // Arc 3 (Counter-clockwise using cairo_arc_negative logic)
         const next_yearx = xc + year_length * Math.cos(next_start);
         const next_yeary = yc + year_length * Math.sin(next_start);
-        ctx.arc(next_yearx, next_yeary, year_length, next_start, next_start + Math.PI, true);
+        ctx24.arc(next_yearx, next_yeary, year_length, next_start, next_start + Math.PI, true);
 
-        ctx.fillStyle = hexToRgba(settings.year_background.hex, settings.year_background.alpha);
-        ctx.strokeStyle = hexToRgba(settings.year_background.hex, settings.year_background.alpha);
-        ctx.lineWidth = 1;
+        ctx24.fillStyle = hexToRgba(settings.year_background.hex, settings.year_background.alpha);
+        ctx24.strokeStyle = hexToRgba(settings.year_background.hex, settings.year_background.alpha);
+        ctx24.lineWidth = 1;
 
         if (Math.floor(year / Math.pow(2, i)) % 2 === 1) {
-            ctx.fill();
+            ctx24.fill();
         }
-        ctx.stroke();
+        ctx24.stroke();
     }
 
     // -------------------------------------------------------------
@@ -109,16 +109,16 @@ function drawClock() {
     const start_angle = -Math.PI / 2;
     const end_angle = start_angle + minutes_angle;
 
-    const glass_gradient = ctx.createRadialGradient(xc, yc, 0, xc, yc, minute_length);
+    const glass_gradient = ctx24.createRadialGradient(xc, yc, 0, xc, yc, minute_length);
     glass_gradient.addColorStop(0, hexToRgba(settings.minute_sector.hex, settings.minute_sector.alpha));
     glass_gradient.addColorStop(1, hexToRgba(settings.minute_sector_edge.hex, settings.minute_sector_edge.alpha));
 
-    ctx.beginPath();
-    ctx.moveTo(xc, yc);
-    ctx.arc(xc, yc, minute_length, start_angle, end_angle, false);
-    ctx.closePath();
-    ctx.fillStyle = glass_gradient;
-    ctx.fill();
+    ctx24.beginPath();
+    ctx24.moveTo(xc, yc);
+    ctx24.arc(xc, yc, minute_length, start_angle, end_angle, false);
+    ctx24.closePath();
+    ctx24.fillStyle = glass_gradient;
+    ctx24.fill();
 
     // -------------------------------------------------------------
     // 3. 24-Hour Ring Sector
@@ -127,16 +127,16 @@ function drawClock() {
     const hours_24_inner_radius = radius * 0.8;
     const end_angle_hr = start_angle + hours_angle;
 
-    let glassGradientHr = ctx.createRadialGradient(xc, yc, 0, xc, yc, hours_24_outer_radius);
+    let glassGradientHr = ctx24.createRadialGradient(xc, yc, 0, xc, yc, hours_24_outer_radius);
     glassGradientHr.addColorStop(0, hexToRgba(settings.day_hour_sector.hex, settings.day_hour_sector.alpha));
     glassGradientHr.addColorStop(1, hexToRgba(settings.day_hour_sector_edge.hex, settings.day_hour_sector_edge.alpha));
 
-    ctx.beginPath();
-    ctx.arc(xc, yc, hours_24_outer_radius, start_angle, end_angle_hr, false);
-    ctx.arc(xc, yc, hours_24_inner_radius, end_angle_hr, start_angle, true);
-    ctx.closePath();
-    ctx.fillStyle = glassGradientHr;
-    ctx.fill();
+    ctx24.beginPath();
+    ctx24.arc(xc, yc, hours_24_outer_radius, start_angle, end_angle_hr, false);
+    ctx24.arc(xc, yc, hours_24_inner_radius, end_angle_hr, start_angle, true);
+    ctx24.closePath();
+    ctx24.fillStyle = glassGradientHr;
+    ctx24.fill();
 
     // -------------------------------------------------------------
     // 4. Hour Marks & Month Marks
@@ -167,12 +167,12 @@ function drawClock() {
         markColor = hexToRgba(settings.solar_night.hex, settings.hour_mark.alpha);
       }
 
-      ctx.beginPath();
-      ctx.lineWidth = mark_width;
-      ctx.strokeStyle = markColor;
-      ctx.moveTo(xc + inner_radius * Math.sin(angle), yc - inner_radius * Math.cos(angle));
-      ctx.lineTo(xc + outer_radius * Math.sin(angle), yc - radius * Math.cos(angle));
-      ctx.stroke();
+      ctx24.beginPath();
+      ctx24.lineWidth = mark_width;
+      ctx24.strokeStyle = markColor;
+      ctx24.moveTo(xc + inner_radius * Math.sin(angle), yc - inner_radius * Math.cos(angle));
+      ctx24.lineTo(xc + outer_radius * Math.sin(angle), yc - radius * Math.cos(angle));
+      ctx24.stroke();
     }
 
     // -------------------------------------------------------------
@@ -188,16 +188,16 @@ function drawClock() {
         const x = xc + ring_radius * Math.cos(angle);
         const y = yc + ring_radius * Math.sin(angle);
 
-        ctx.beginPath();
+        ctx24.beginPath();
         if (i % 7 === 1) {
-            ctx.fillStyle = hexToRgba(settings.day_modulo_1.hex, settings.day_mark.alpha);
+            ctx24.fillStyle = hexToRgba(settings.day_modulo_1.hex, settings.day_mark.alpha);
         } else if (i % 7 === 2 || i % 7 === 3 || i % 7 === 4) {
-            ctx.fillStyle = hexToRgba(settings.day_modulo_234.hex, settings.day_mark.alpha);
+            ctx24.fillStyle = hexToRgba(settings.day_modulo_234.hex, settings.day_mark.alpha);
         } else {
-            ctx.fillStyle = hexToRgba(settings.day_modulo_560.hex, settings.day_mark.alpha);
+            ctx24.fillStyle = hexToRgba(settings.day_modulo_560.hex, settings.day_mark.alpha);
         }
-        ctx.arc(x, y, dot_radius, 0, 2 * Math.PI);
-        ctx.fill();
+        ctx24.arc(x, y, dot_radius, 0, 2 * Math.PI);
+        ctx24.fill();
     }
 
     requestAnimationFrame(drawClock);
