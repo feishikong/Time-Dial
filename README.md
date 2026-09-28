@@ -18,7 +18,7 @@ There are 2 variants:
 <div id="demo" class="preview">
 <canvas id="12-hour-time-dial" width="400" height="400" class="avatar"></canvas>
 <canvas id="24-hour-time-dial" width="400" height="400" class="avatar"></canvas>
-<a id="github-btn" href="https://feishikong.github.io/time-dial">View Demo</a>
+<a id="github-btn" href="https://feishikong.github.io/Time-Dial">View Demo</a>
 </div>
       
 ## Features
