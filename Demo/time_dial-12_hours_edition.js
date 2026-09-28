@@ -1,4 +1,4 @@
-const canvas = document.getElementById('analogClock');
+const canvas = document.getElementById('12-hour-time-dial');
 const ctx = canvas.getContext('2d');
 
 // Color settings (hexadecimal & alpha matching original Lua config)
