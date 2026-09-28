@@ -37,7 +37,7 @@ function hexToRgba(hex, alpha) {
     return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 }
 
-function drawClock() {
+function draw_12hour_timedial() {
     const w = canvas.width;
     const h = canvas.height;
     ctx.clearRect(0, 0, w, h);
@@ -190,8 +190,8 @@ function drawClock() {
         ctx.fill();
     }
 
-    requestAnimationFrame(drawClock);
+    requestAnimationFrame(draw_12hour_timedial);
 }
 
 // Start render loop
-drawClock();
+draw_12hour_timedial();
