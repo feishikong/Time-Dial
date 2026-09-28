@@ -2,7 +2,7 @@ const canvas24 = document.getElementById('24-hour-time-dial');
 const ctx24 = canvas24.getContext('2d');
 
 // Color settings (hexadecimal & alpha matching original Lua config)
-const colors = {
+const colors24 = {
     ubuntu_orange:  "#E95420",
     lilac:  "#c8a2c8",
     forest_green:  "#008822",
@@ -15,22 +15,22 @@ const colors = {
     pikachu_yellow: "#F6CF57",
 };
 
-const settings = {
-    month_mark: { hex: colors.ubuntu_orange, alpha: 0.7 },
-    day_hour_hand: { hex: colors.fedora_blue, alpha: 0.7 },
-    day_mark: { hex: colors.ubuntu_orange, alpha: 0.7 },
-    day_modulo_1: { hex: colors.red_hat, alpha: 0.7 },
-    day_modulo_234: { hex: colors.bubblegum, alpha: 0.1 },
-    minute_sector: { hex: colors.forest_green, alpha: 0.1 },
-    minute_sector_edge: { hex: colors.forest_green, alpha: 1.0 },
-    hour_mark: { hex: colors.pikachu_yellow, alpha: 0.7 },
-    year_background: { hex: colors.silver, alpha: 0.5 },
-    night_hour_hand: { hex: colors.coal_black, alpha: 0.5 },
-    day_modulo_560: { hex: colors.unity_purple, alpha: 0.5 },
-    day_hour_sector: { hex: colors.fedora_blue, alpha: 0.1 },
-    day_hour_sector_edge: { hex: colors.fedora_blue, alpha: 0.8 },
-    solar_day: { hex: colors.bubblegum, alpha: 1 },
-    solar_night: { hex: colors.coal_black, alpha: 1 },
+const settings24 = {
+    month_mark: { hex: colors24.ubuntu_orange, alpha: 0.7 },
+    day_hour_hand: { hex: colors24.fedora_blue, alpha: 0.7 },
+    day_mark: { hex: colors24.ubuntu_orange, alpha: 0.7 },
+    day_modulo_1: { hex: colors24.red_hat, alpha: 0.7 },
+    day_modulo_234: { hex: colors24.bubblegum, alpha: 0.1 },
+    minute_sector: { hex: colors24.forest_green, alpha: 0.1 },
+    minute_sector_edge: { hex: colors24.forest_green, alpha: 1.0 },
+    hour_mark: { hex: colors24.pikachu_yellow, alpha: 0.7 },
+    year_background: { hex: colors24.silver, alpha: 0.5 },
+    night_hour_hand: { hex: colors24.coal_black, alpha: 0.5 },
+    day_modulo_560: { hex: colors24.unity_purple, alpha: 0.5 },
+    day_hour_sector: { hex: colors24.fedora_blue, alpha: 0.1 },
+    day_hour_sector_edge: { hex: colors24.fedora_blue, alpha: 0.8 },
+    solar_day: { hex: colors24.bubblegum, alpha: 1 },
+    solar_night: { hex: colors24.coal_black, alpha: 1 },
 };
 
 
@@ -92,8 +92,8 @@ function drawClock() {
         const next_yeary = yc + year_length * Math.sin(next_start);
         ctx24.arc(next_yearx, next_yeary, year_length, next_start, next_start + Math.PI, true);
 
-        ctx24.fillStyle = hexToRgba(settings.year_background.hex, settings.year_background.alpha);
-        ctx24.strokeStyle = hexToRgba(settings.year_background.hex, settings.year_background.alpha);
+        ctx24.fillStyle = hexToRgba(settings24.year_background.hex, settings24.year_background.alpha);
+        ctx24.strokeStyle = hexToRgba(settings24.year_background.hex, settings24.year_background.alpha);
         ctx24.lineWidth = 1;
 
         if (Math.floor(year / Math.pow(2, i)) % 2 === 1) {
@@ -110,8 +110,8 @@ function drawClock() {
     const end_angle = start_angle + minutes_angle;
 
     const glass_gradient = ctx24.createRadialGradient(xc, yc, 0, xc, yc, minute_length);
-    glass_gradient.addColorStop(0, hexToRgba(settings.minute_sector.hex, settings.minute_sector.alpha));
-    glass_gradient.addColorStop(1, hexToRgba(settings.minute_sector_edge.hex, settings.minute_sector_edge.alpha));
+    glass_gradient.addColorStop(0, hexToRgba(settings24.minute_sector.hex, settings24.minute_sector.alpha));
+    glass_gradient.addColorStop(1, hexToRgba(settings24.minute_sector_edge.hex, settings24.minute_sector_edge.alpha));
 
     ctx24.beginPath();
     ctx24.moveTo(xc, yc);
@@ -128,8 +128,8 @@ function drawClock() {
     const end_angle_hr = start_angle + hours_angle;
 
     let glassGradientHr = ctx24.createRadialGradient(xc, yc, 0, xc, yc, hours_24_outer_radius);
-    glassGradientHr.addColorStop(0, hexToRgba(settings.day_hour_sector.hex, settings.day_hour_sector.alpha));
-    glassGradientHr.addColorStop(1, hexToRgba(settings.day_hour_sector_edge.hex, settings.day_hour_sector_edge.alpha));
+    glassGradientHr.addColorStop(0, hexToRgba(settings24.day_hour_sector.hex, settings24.day_hour_sector.alpha));
+    glassGradientHr.addColorStop(1, hexToRgba(settings24.day_hour_sector_edge.hex, settings24.day_hour_sector_edge.alpha));
 
     ctx24.beginPath();
     ctx24.arc(xc, yc, hours_24_outer_radius, start_angle, end_angle_hr, false);
@@ -158,13 +158,13 @@ function drawClock() {
 
       let markColor;
       if (i <= month_mark && i % 2 === 0) {
-        markColor = hexToRgba(settings.month_mark.hex, settings.hour_mark.alpha);
+        markColor = hexToRgba(settings24.month_mark.hex, settings24.hour_mark.alpha);
       } else if (i % 2 === 0) {
-        markColor = hexToRgba(settings.hour_mark.hex, settings.hour_mark.alpha);
+        markColor = hexToRgba(settings24.hour_mark.hex, settings24.hour_mark.alpha);
       } else if (i < 6 || i > 18) {
-        markColor = hexToRgba(settings.solar_day.hex, settings.hour_mark.alpha);
+        markColor = hexToRgba(settings24.solar_day.hex, settings24.hour_mark.alpha);
       } else {
-        markColor = hexToRgba(settings.solar_night.hex, settings.hour_mark.alpha);
+        markColor = hexToRgba(settings24.solar_night.hex, settings24.hour_mark.alpha);
       }
 
       ctx24.beginPath();
@@ -190,11 +190,11 @@ function drawClock() {
 
         ctx24.beginPath();
         if (i % 7 === 1) {
-            ctx24.fillStyle = hexToRgba(settings.day_modulo_1.hex, settings.day_mark.alpha);
+            ctx24.fillStyle = hexToRgba(settings24.day_modulo_1.hex, settings24.day_mark.alpha);
         } else if (i % 7 === 2 || i % 7 === 3 || i % 7 === 4) {
-            ctx24.fillStyle = hexToRgba(settings.day_modulo_234.hex, settings.day_mark.alpha);
+            ctx24.fillStyle = hexToRgba(settings24.day_modulo_234.hex, settings24.day_mark.alpha);
         } else {
-            ctx24.fillStyle = hexToRgba(settings.day_modulo_560.hex, settings.day_mark.alpha);
+            ctx24.fillStyle = hexToRgba(settings24.day_modulo_560.hex, settings24.day_mark.alpha);
         }
         ctx24.arc(x, y, dot_radius, 0, 2 * Math.PI);
         ctx24.fill();
