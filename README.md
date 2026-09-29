@@ -21,11 +21,7 @@ There are 2 variants:
 </div>
 <div id="github-btn>
       
-[![Button Click]][Link]
-
-[Button Click]: https://img.shields.io/badge/View_Demo-008822?style=for-the-badge
-
-[Link]: https://feishikong.github.io/Time-Dial
+[![View Demo](https://img.shields.io/badge/View_Demo-008822?style=for-the-badge)](https://feishikong.github.io/Time-Dial)
 
 </div>
       
