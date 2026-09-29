@@ -47,7 +47,6 @@ local colors = {
 }
 local settings = {
     month_mark = {hex = colors.ubuntu_orange, alpha = 0.7},   -- Month marks
-    day_hour_hand = {hex = colors.red_hat, alpha = 1},   -- Day Hour hand
     day_mark = {hex = colors.ured_hat, alpha = 0.7},   -- Day marks
     day_modulo_1 = {hex = colors.red_hat, alpha = 0.7},   -- Day marks modulo 1
     day_modulo_234 = {hex = colors.bubblegum, alpha = 0.1},   -- Day marks modulo 2, 3 and 4

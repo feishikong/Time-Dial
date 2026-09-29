@@ -134,12 +134,11 @@ function conky_analog_clock()
       local outer_radius = radius
       local mark_width = h * 0.03
       local month = os.date("%m")
-      local month_mark = month * 5
+      local month_mark = tonumber(month)
 
       -- Hour marks
-      for i = 1, 60 do
-          local angle = (i / 60) * 2 * math.pi
-          if i % 5 == 0 then
+      for i = 1, 12 do
+          local angle = (i / 12) * 2 * math.pi
               -- Hour mark (every 5 minutes, so 12 hours)
               -- Month marks
 	      if i <= month_mark then
@@ -153,7 +152,6 @@ function conky_analog_clock()
               cairo_move_to(cr, xc + inner_radius * math.sin(angle), yc - inner_radius * math.cos(angle))
               cairo_line_to(cr, xc + outer_radius * math.sin(angle), yc - outer_radius * math.cos(angle))
               cairo_stroke(cr)
-          end
       end
 
     -- Hour hand
