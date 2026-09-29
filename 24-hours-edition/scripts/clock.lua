@@ -52,7 +52,7 @@ local settings = {
     day_modulo_1 = {hex = colors.red_hat, alpha = 0.7},   -- Day marks modulo 1
     day_modulo_234 = {hex = colors.bubblegum, alpha = 0.1},   -- Day marks modulo 2, 3 and 4
     minute_sector = {hex = colors.forest_green, alpha = 0.1},   -- Minute sector
-    minute_sector_edge = {hex = colors.forest_green, alpha = 1},  -- Minute Sector Edge
+    minute_sector_edge = {hex = colors.forest_green, alpha = 0.7},  -- Minute Sector Edge
     hour_mark = {hex = colors.pikachu_yellow, alpha = 0.7},   -- Hour marks
     year_background = {hex = colors.silver, alpha = 0.5},   -- Year background
     year_start = {hex = colors.bubblegum, alpha = 1},   -- Year background
