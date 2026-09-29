@@ -21,7 +21,7 @@ There are 2 variants:
 </div>
 <div id="github-btn>
       
-[![Button Click]][Link] 
+[![Button Click]][Link]
 
 [Button Click]: https://img.shields.io/badge/View_Demo-008822?style=for-the-badge
 
