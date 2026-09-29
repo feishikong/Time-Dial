@@ -25,7 +25,7 @@ const settings24 = {
     minute_sector_edge: { hex: colors24.forest_green, alpha: 0.8 },
     hour_mark: { hex: colors24.pikachu_yellow, alpha: 0.7 },
     year_background: { hex: colors24.silver, alpha: 0.5 },
-    year_start: { hex: colors.bubblegum, alpha: 1.0 },
+    year_start: { hex: colors24.bubblegum, alpha: 1.0 },
     night_hour_hand: { hex: colors24.coal_black, alpha: 0.5 },
     day_modulo_560: { hex: colors24.unity_purple, alpha: 0.5 },
     day_hour_sector: { hex: colors24.fedora_blue, alpha: 0.1 },
