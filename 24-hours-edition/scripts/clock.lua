@@ -177,9 +177,9 @@ function conky_analog_clock()
 	      elseif (i % 2 == 0) then
 		      r, g, b, a = hex_to_rgba(settings.hour_mark.hex, settings.hour_mark.alpha)
 	      elseif (i < 6 or i > 18) then
-	              r, g, b, a = hex_to_rgba(settings.solar_day.hex, settings.hour_mark.alpha)
-	      else
 	              r, g, b, a = hex_to_rgba(settings.solar_night.hex, settings.hour_mark.alpha)
+	      else
+	              r, g, b, a = hex_to_rgba(settings.solar_day.hex, settings.hour_mark.alpha)
 	      end
               cairo_set_source_rgba(cr, r, g, b, a)
               cairo_set_line_width(cr, mark_width)
