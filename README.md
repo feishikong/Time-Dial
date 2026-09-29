@@ -21,7 +21,10 @@ There are 2 variants:
 </div>
 <div id="github-btn">
   
-  [![View Demo](https://img.shields.io/badge/View_Demo-008822?style=for-the-badge)](https://feishikong.github.io/Time-Dial)
+  [![View Demo Image]][Demo URL]
+
+[View Demo Image]: https://img.shields.io/badge/View_Demo-008822?style=for-the-badge
+[Demo URL]: https://feishikong.github.io/Time-Dial
   
 </div>
       
