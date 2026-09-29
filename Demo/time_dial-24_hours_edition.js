@@ -71,9 +71,9 @@ function draw_24hour_timedial() {
     // 1. Year Background (Spiral Petal Bitmask)
     // -------------------------------------------------------------
     const year_length = radius / 2;
-    const petal_angle_step = Math.PI / 6;
+    const petal_angle_step = Math.PI / 12;
 
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 24; i++) {
         const petal_angle = i * petal_angle_step - (Math.PI / 2) + petal_angle_step + seconds_angle;
         const petal_start_angle = petal_angle + Math.PI;
         const yearx = xc + year_length * Math.cos(petal_angle);
