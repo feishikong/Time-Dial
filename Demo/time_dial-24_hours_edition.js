@@ -22,7 +22,7 @@ const settings24 = {
     day_modulo_1: { hex: colors24.red_hat, alpha: 0.7 },
     day_modulo_234: { hex: colors24.bubblegum, alpha: 0.1 },
     minute_sector: { hex: colors24.forest_green, alpha: 0.1 },
-    minute_sector_edge: { hex: colors24.forest_green, alpha: 1.0 },
+    minute_sector_edge: { hex: colors24.forest_green, alpha: 0.8 },
     hour_mark: { hex: colors24.pikachu_yellow, alpha: 0.7 },
     year_background: { hex: colors24.silver, alpha: 0.5 },
     night_hour_hand: { hex: colors24.coal_black, alpha: 0.5 },
