@@ -94,13 +94,12 @@ function draw_24hour_timedial() {
         ctx24.arc(next_yearx, next_yeary, year_length, next_start, next_start + Math.PI, true);
 
         ctx24.fillStyle = hexToRgba(settings24.year_background.hex, settings24.year_background.alpha);
-        ctx24.strokeStyle = hexToRgba(settings24.year_background.hex, settings24.year_background.alpha);
         ctx24.lineWidth = 1;
 
         if (i === 0 || i == 12){
-          ctx.strokeStyle = hexToRgba(settings.year_start.hex, settings.year_start.alpha);
+          ctx24.strokeStyle = hexToRgba(settings24.year_start.hex, settings24.year_start.alpha);
         } else {
-          ctx.strokeStyle = hexToRgba(settings.year_background.hex, settings.year_background.alpha);
+          ctx24.strokeStyle = hexToRgba(settings24.year_background.hex, settings24.year_background.alpha);
         }
 
         if (Math.floor(year / Math.pow(2, i)) % 2 === 1) {
