@@ -18,11 +18,18 @@ There are 2 variants:
 <div id="demo" class="preview">
 <canvas id="12-hour-time-dial" width="400" height="400" class="avatar"></canvas>
 <canvas id="24-hour-time-dial" width="400" height="400" class="avatar"></canvas>
-<a id="github-btn" href="https://feishikong.github.io/Time-Dial">View Demo</a>
+</div>
+<div id="github-btn>
+      
+[![Button Click]][Link] 
+
+[Button Click]: https://img.shields.io/badge/View_Demo-008822?style=for-the-badge
+
+[Link]: https://feishikong.github.io/Time-Dial
+
 </div>
       
 ## Features
-
 - Displays the current year as an abstract binary pattern
   - the petals encode the year using binary
 - Highlights the hour marks to represent the current month
