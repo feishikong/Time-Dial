@@ -1,5 +1,5 @@
     body {
-      background: #121221;
+      background: #0C0809;
       color: #f3f3f3;
       font-family: 'Montserrat', Arial, sans-serif;
       margin: 0;
@@ -7,7 +7,7 @@
       min-height: 100vh;
     }
     .gradient-border {
-      background: linear-gradient(to bottom, #003e00, #03f404, #003e00);
+      background: linear-gradient(to bottom, #082, #3C6EB4, #082);
       border-radius: 18px;
       padding: 8px;
       max-width: 900px;
@@ -28,27 +28,27 @@
       display: block;
       margin: 0 auto 24px auto;
       border-radius: 50%;
-      box-shadow: 0 2px 12px #0006;
+      box-shadow: 0 2px 12px #000a;
       transition: box-shadow 0.3s;
     }
     .avatar:hover {
-      box-shadow: 0 0 32px #03f404, 0 0 0 6px #222;
+      box-shadow: 0 0 32px #082, 0 0 0 6px #222;
     }
     h1, h2, h3 {
-      color: #c5cff5;
+      color: #082;
       letter-spacing: 1.2px;
     }
     a {
-      color: #88b3fa;
+      color: #3C6EB4;
       transition: color 0.2s;
     }
     a:hover {
-      color: #1965f5;
+      color: #762572;
       text-decoration: underline wavy;
     }
     pre, code {
-      background: #2c2c3b;
-      color: #e8e8e8;
+      background: #0C0809;
+      color: #ffc1cc;
       border-radius: 4px;
       padding: 2px 6px;
       font-family: 'Fira Mono', monospace;
@@ -59,7 +59,7 @@
     }
     table {
       border-collapse: collapse;
-      background: #242424;
+      background: #0C0809;
       margin-bottom: 1em;
     }
     th, td {
@@ -86,16 +86,16 @@
   transition: box-shadow 0.3s;
 }
 #readme-content img:hover {
-  box-shadow: 0 0 32px #03f404;
+  box-shadow: 0 0 32px #082;
 }
 ::selection {
-  background: #03f404;
-  color: #19192b;
+  background: #082;
+  color: #0C0809;
 }
 .github-btn {
   display: inline-block;
-  background: #03f404;
-  color: #19192b;
+  background: #082;
+  color: #0C0809;
   padding: 8px 20px;
   border-radius: 6px;
   font-weight: bold;
@@ -106,7 +106,7 @@
   display: flex;
 }
 .github-btn:hover {
-  background: #00a300;
+  background: #082;
   color: #fff;
 }
 html {
