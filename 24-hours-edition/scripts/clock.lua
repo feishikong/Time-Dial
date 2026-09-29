@@ -55,7 +55,7 @@ local settings = {
     minute_sector_edge = {hex = colors.forest_green, alpha = 1},  -- Minute Sector Edge
     hour_mark = {hex = colors.pikachu_yellow, alpha = 0.7},   -- Hour marks
     year_background = {hex = colors.silver, alpha = 0.5},   -- Year background
-    night_hour_hand = {hex = colors.fedora_blue, alpha = 1},   -- Night Hour hand
+    year_start = {hex = colors.bubblegum, alpha = 1},   -- Year background
     day_modulo_560 = {hex = colors.unity_purple, alpha = 0.5},   -- Day marks modulo 5, 6 and 0
     solar_day = {hex = colors.bubblegum, alpha = 1},
     day_hour_sector = {hex = colors.fedora_blue, alpha = 0.1},   -- Minute sector
@@ -113,6 +113,10 @@ function conky_analog_clock()
 	   if math.floor(year / (2 ^ i)) % 2 == 1 then
 	           cairo_fill(cr)
 	   end
+       if (i == 0 or i == 12) then
+           r, g, b, a = hex_to_rgba(settings.year_start.hex, settings.year_start.alpha)
+           cairo_set_source_rgba(cr, r, g, b, a)
+       end
 	   cairo_stroke(cr)
     end
 

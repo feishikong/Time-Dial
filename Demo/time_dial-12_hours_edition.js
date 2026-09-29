@@ -25,6 +25,7 @@ const settings = {
     minute_sector_edge: { hex: colors.forest_green, alpha: 1.0 },
     hour_mark: { hex: colors.pikachu_yellow, alpha: 0.7 },
     year_background: { hex: colors.silver, alpha: 0.5 },
+    year_start: { hex: colors.bubblegum, alpha: 1.0 },
     night_hour_hand: { hex: colors.coal_black, alpha: 0.5 },
     day_modulo_560: { hex: colors.unity_purple, alpha: 0.5 },
 };
@@ -90,6 +91,12 @@ function draw_12hour_timedial() {
         ctx.fillStyle = hexToRgba(settings.year_background.hex, settings.year_background.alpha);
         ctx.strokeStyle = hexToRgba(settings.year_background.hex, settings.year_background.alpha);
         ctx.lineWidth = 1;
+
+        if (i === 0 || i == 6){
+          ctx.strokeStyle = hexToRgba(settings.year_start.hex, settings.year_start.alpha);
+        } else {
+          ctx.strokeStyle = hexToRgba(settings.year_background.hex, settings.year_background.alpha);
+        }
 
         if (Math.floor(year / Math.pow(2, i)) % 2 === 1) {
             ctx.fill();
