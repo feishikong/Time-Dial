@@ -20,9 +20,9 @@ There are 2 variants:
 <canvas id="24-hour-time-dial" width="400" height="400" class="avatar"></canvas>
 </div>
 <div id="github-btn>
-      
-[![View Demo](https://img.shields.io/badge/View_Demo-008822?style=for-the-badge)](https://feishikong.github.io/Time-Dial)
-
+  <a href="https://feishikong.github.io/Time-Dial">
+    <img src="https://img.shields.io/badge/View_Demo-008822?style=for-the-badge" alt="View Demo">
+  </a>
 </div>
       
 ## Features
